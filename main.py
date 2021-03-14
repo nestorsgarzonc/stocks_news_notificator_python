@@ -56,13 +56,11 @@ def send_message(body: str):
 
 
 def make_message():
-    # day_of_week = today.weekday()
-    # if day_of_week == 6 or day_of_week == 5:
-    #     return 'The market cap today isn\'t open 😣'
+    day_of_week = today.weekday()
+    if day_of_week == 6 or day_of_week == 5:
+        return 'The market cap today isn\'t open 😣'
     stock_data = get_stock_data()
-    # TODO: remove dev_data and uncomment condition
-    today_new = today-timedelta(days=2)
-    dataa = stock_data['Time Series (Daily)'][today_new.strftime(r'%Y-%m-%d')]
+    dataa = stock_data['Time Series (Daily)'][today.strftime(r'%Y-%m-%d')]
     open_m = float(dataa['1. open'])
     close_m = float(dataa['4. close'])
     diff = close_m-open_m
