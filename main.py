@@ -1,13 +1,13 @@
 import os
 import requests
-from datetime import date, timedelta
+from datetime import date
 from twilio.rest import Client
 from dotenv import load_dotenv
 
 load_dotenv()
 
 STOCK = 'TSLA'
-COMPANY_NAME = os.getSTOCK = os.getenv('COMPANY_NAME')
+COMPANY_NAME = 'Tesla Inc'
 API_KEY_ALPHAVANTAGE = os.getSTOCK = os.getenv('API_KEY_ALPHAVANTAGE')
 API_KEY_NEWSAPI = os.getSTOCK = os.getenv('API_KEY_NEWSAPI')
 today = date.today()
