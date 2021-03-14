@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-STOCK = os.getenv('STOCK')
+STOCK = 'TSLA'
 COMPANY_NAME = os.getSTOCK = os.getenv('COMPANY_NAME')
 API_KEY_ALPHAVANTAGE = os.getSTOCK = os.getenv('API_KEY_ALPHAVANTAGE')
 API_KEY_NEWSAPI = os.getSTOCK = os.getenv('API_KEY_NEWSAPI')
@@ -66,9 +66,9 @@ def make_message():
     diff = close_m-open_m
     sign = None
     if diff >= 0:
-        sign = 'TSLA: 🔺'
+        sign = f'{STOCK}: 🔺'
     else:
-        sign = 'TSLA: 🔻'
+        sign = f'{STOCK}: 🔻'
     percentage = abs(round(100*close_m/open_m)-100)
     sign += str(percentage)+'%'
     article = get_news_data()
